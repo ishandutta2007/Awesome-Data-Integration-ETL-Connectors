@@ -32,73 +32,29 @@ Contributions welcome! Open a PR to add/update entries. Keep descriptions factua
 
 ## Table of Contents
 
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
 - [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
 - [Open-Source GitHub Projects](#open-source-github-projects)
-
 - [How to Contribute](#how-to-contribute)
-
 - [Disclaimer](#disclaimer)
 
+## Sector Overview & Market Dynamics
 
+The global data integration and ETL market is estimated at **$13.1B–$19.1B in 2025** and projected to reach **$14.3B–$21.5B by 2026** (~10–13% CAGR), fueled by cloud migration and enterprise AI data preparation pipelines. The market is **moderately fragmented**: hyperscalers and legacy enterprise providers (Microsoft, AWS, Google Cloud, Informatica, IBM) dominate core enterprise data fabric layers, while nimble modern ELT platforms (Fivetran, Airbyte, Matillion) and open-source frameworks continuously capture specialized pipeline and CDC workloads without a single winner-take-all monopoly.
 
 ## SaaS/Hosted Platforms
 
-
-
-- **[Fivetran](https://www.fivetran.com/)**
-
-  **Fully managed ELT platform** with 700+ connectors, now merged with dbt Labs (June 2026) . **Pricing**: **Free plan up to 500K MAR**; Standard from **~$500 per million MAR**; **$12,000 annual contract minimum**; **$5/month per standard connection** minimum . **Critical change**: Deletes and history-mode changes count toward paid MAR since January 2026; third-party analyses report **40–70% cost increases** for multi-connector teams . **Free tier**: Yes, 500K MAR. **Best for**: teams wanting zero-maintenance ingestion with dbt transformation bundled—**trade-off**: MAR billing penalizes high-churn data; annual minimum excludes small teams.
-
-
-
-- **[Airbyte Cloud](https://airbyte.com/)**
-
-  **Managed version of the open-source Airbyte platform** with 700+ connectors . **Pricing**: **Free Core** (self-hosted); **Standard $20/month**; **Plus $189/month**; **Pro/Enterprise Flex** capacity-based (Data Workers, no per-row charge) . **Free tier**: Yes, Core self-hosted is free; Standard $20/month entry. **Best for**: teams wanting open-source flexibility with managed convenience—**trade-off**: capacity-based pricing requires sync concurrency modeling; smaller connector quality variance than Fivetran.
-
-
-
-- **[Matillion (Maia)](https://www.matillion.com/)**
-
-  **Low-code pipeline builder with in-warehouse transformation** . **Pricing**: **Credits per task hour**—1 for orchestration, 3 for transformation, 1–2 for CDC streams; **~$2.00 per credit** per third-party listings; **14-day trial with 500 credits** . **Free tier**: Trial only. **Critical gotcha**: **Streaming CDC bills by the clock, not data**—a premium stream runs ~720 hours/month (~1,440 credits) whether one row or a billion changes . **Best for**: teams doing heavy in-warehouse transformation on Snowflake, Databricks, Redshift, or BigQuery—**trade-off**: warehouse compute is a second bill; always-on CDC is expensive.
-
-
-
-- **[Qlik Replicate](https://www.qlik.com/)**
-
-  **Real-time CDC and replication** with broad heterogeneous database support . **Pricing**: **Starting at $299/month flat rate** per Capterra . **Free tier**: None. **Best for**: enterprises needing high-volume CDC from legacy databases—**trade-off**: flat rate may not scale predictably; quote required for full scope.
-
-
-
-- **[Hevo Data](https://hevodata.com/)**
-
-  **No-code ELT platform** with 170+ connectors . **Pricing**: **Free plan with 1M events/month** (unlimited free sources, unlimited models); **Starter** (up to 50M events); **Professional** (up to 100M events); **Business Critical** custom . **14-day free trial**; **unused sources get 14 days free events** on first use . **Free tier**: Yes, 1M events/month. **Best for**: small teams wanting a genuine free tier with no credit card—**trade-off**: events quota exhausts quickly at scale; paid sources require upgrade.
-
-
-
-- **[Informatica Cloud Data Integration](https://www.informatica.com/)**
-
-  **Enterprise iPaaS** with broad connectivity and transformations . **Pricing**: **Integration Cloud starting at ¥240,000/month** (Japan pricing; ~$1,600/month) ; quote-only for global pricing. **Free tier**: Trial available. **Best for**: enterprises needing mature data integration with governance—**trade-off**: enterprise pricing; implementation complexity.
-
-
-
-- **[Boomi Data Integration](https://boomi.com/)**
-
-  **Cloud-native iPaaS** with low-code canvas and flexible runtimes . **Pricing**: **Pay-As-You-Go** available but FAQ limits sign-up to active trial users; otherwise quote-only through sales . **Free tier**: Trial available. **Best for**: mixed SaaS and on-premises apps with small integration teams—**trade-off**: published pricing only for trial users; enterprise sales process.
-
-
-
-- **[Confluent Cloud](https://www.confluent.io/)**
-
-  **Fully managed Kafka** with 100+ connectors . **Pricing**: **Connector task $/task/hour** (e.g., S3 source $0.05–$0.10/task-hour) plus **data transfer $0.025/GB** . **Free tier**: Limited trial. **Best for**: teams wanting Kafka without operational overhead—**trade-off**: per-task and per-GB charges stack; connector costs vary widely by source.
-
-
-
-- **[Snowflake Connectors](https://www.snowflake.com/en/developers/downloads/drivers-and-libraries/)**
-
-  **Native client libraries** for Snowflake integration . **Connectors**: **Snowpark** (Java/Scala), **Snowpark ML** (Python), **Snowflake Connector for Python**, **SQLAlchemy**, **Spark**, **Kafka** . **Pricing**: Free; Snowflake compute costs apply. **Free tier**: Trial credits. **Best for**: developers building custom integrations to Snowflake—**trade-off**: connectors only; you build the pipeline logic.
-
-
+| Platform | Company Scale (Revenue / Valuation) | Pricing (Specific Starting Tiers) | Free Tier / Free Trial Limits | Description & Key Trade-offs |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Snowflake Connectors](https://www.snowflake.com/en/developers/downloads/drivers-and-libraries/)** | **~$90B–$115B Market Cap** (~$4.5B+ annual revenue) | Connectors free; Snowflake warehouse compute starts at **Standard tier ~$2.00/credit** (On-demand) | **30-day free trial with $400 in free credits** (trial ends when credits exhaust or 30 days elapse) | Native client libraries (Snowpark, Python, Kafka, Spark). Fast native data transfer into Snowflake, but you must build and orchestrate the pipeline logic yourself. |
+| **[Confluent Cloud](https://www.confluent.io/)** | **~$11B Enterprise Value / Market Cap** | Pay-as-you-go connector tasks from **$0.05–$0.10/task-hour** (e.g. S3 source) plus **$0.025/GB** data transfer | **30-day free trial with $400 in usage credits** (ends when credits exhaust or 30 days elapse) | Fully managed Apache Kafka data streaming with 100+ connectors. Best for event streaming pipelines; costs compound across task hours, partitions, and bandwidth. |
+| **[Informatica Cloud Data Integration](https://www.informatica.com/)** | **~$7.5B–$8.0B Market Cap** (~$1.6B+ annual revenue) | Integration Cloud pay-as-you-go starts at **¥240,000/month (~$1,600/month)** or **$0.36/IPU-hour** (Informatica Processing Unit) | **30-day free trial** (provisioned evaluation organization with scoped IPU allowance for testing mappings and connectors) | Mature enterprise iPaaS with governance and complex data transformations. Best for large enterprises; steep learning curve and premium pricing. |
+| **[Fivetran](https://www.fivetran.com/)** | **$5.6B Valuation** | Free plan up to 500K MAR; Standard plan from **~$500 per million MAR**; **$12,000/year contract minimum**; **$5/month per standard connection** minimum | **Free plan forever up to 500,000 Monthly Active Rows (MAR)**; plus a **14-day unlimited free trial** on paid connectors | Fully managed ELT platform with 700+ connectors, merged with dbt Labs. Deletes and history-mode count toward paid MAR since Jan 2026, increasing high-churn costs. |
+| **[Boomi Data Integration](https://boomi.com/)** | **~$4B Valuation** (acquired by Francisco Partners & TPG for $4B) | Pay-As-You-Go starts at **$99/month** (plus $0.05 per processed message); custom enterprise tiers from **$20,000+/year** | **30-day free trial** with full access to Boomi Enterprise Platform integration features (no upfront credit card required) | Low-code cloud-native iPaaS with distributed Atoms runtime. Well-suited for hybrid cloud and SaaS integration; advanced connectors require enterprise contracts. |
+| **[Qlik Replicate](https://www.qlik.com/)** | **~$3B–$4B Est. Valuation** (~$750M+ annual revenue; Thoma Bravo owned) | Self-hosted/embedded starting at **$299/month flat rate** (per published entry listings; enterprise quote-based) | **30-day scoped PoC evaluation license** via sales request (license restricted to specified host machines and target endpoints; no public self-service tier) | High-throughput, real-time log-based CDC replication across heterogeneous databases. Best for legacy database sync; custom enterprise pricing required for high scale. |
+| **[Airbyte Cloud](https://airbyte.com/)** | **$1.5B Valuation** (Series B) | Standard plan starts at **$20/month**; Plus plan at **$189/month**; Enterprise Flex capacity-based on Data Workers | **Self-hosted Core is 100% free forever**; Airbyte Cloud offers a **14-day free trial with $400 in usage credits** | Managed edition of the leading open-source ELT platform with 700+ connectors. Connector Builder allows fast custom APIs; capacity billing requires sync concurrency planning. |
+| **[Matillion (Maia)](https://www.matillion.com/)** | **$1.5B Valuation** (Series E) | Credit-based consumption at **~$2.00 per credit** (Basic model starts at **$500/month** minimum commitment) | **14-day free trial with 500 free credits** (equivalent to ~$1,000 of platform compute) | Low-code pushdown pipeline and transformation platform for Snowflake, Databricks, Redshift, and BigQuery. Streaming CDC bills by clock hour (~1,440 credits/mo), not data volume. |
+| **[Hevo Data](https://hevodata.com/)** | **~$100M–$250M Valuation** (~$46M annual revenue) | Free tier up to 1M events/month; Starter plan starts at **$239/month** (billed annually for 5M events/month) or **$299/month** (monthly billing) | **Free plan forever up to 1,000,000 events/month** (unlimited free sources, single destination, 12-hour sync frequency); **14-day free trial** with unlimited events | No-code ELT platform with 150+ pre-built connectors. Transparent, user-friendly entry point for small teams; event quotas deplete quickly on high-frequency streaming. |
 
 ## Open-Source GitHub Projects
 
