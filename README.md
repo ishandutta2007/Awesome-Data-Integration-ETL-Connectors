@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
   <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Data-Integration-ETL-Connectors/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Data-Integration-ETL-Connectors?style=social" alt="GitHub Stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Data-Integration-ETL-Connectors/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Data-Integration-ETL-Connectors?style=social" alt="GitHub_Stars" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Data-Integration-ETL-Connectors/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Data-Integration-ETL-Connectors?style=social" alt="GitHub Forks" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Data-Integration-ETL-Connectors/issues"><img src="https://img.shields.io/github/issues/ishandutta2007/Awesome-Data-Integration-ETL-Connectors" alt="GitHub Issues" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Data-Integration-ETL-Connectors/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" /></a>
@@ -70,7 +70,7 @@ The sector is **moderately fragmented**:
 
 ## 🐙 Open-Source GitHub Projects
 
-Curated open-source projects for self-hosted data integration, log-based CDC replication, and distributed dataflow orchestration. **Sorted descending by GitHub Stars:**
+Curated open-source projects for self-hosted data integration, log-based CDC replication, and distributed dataflow orchestration. **Sorted descending by GitHub_Stars:**
 
 ### 1. **[Airbyte (Core)](https://github.com/airbytehq/airbyte)** [![Stars](https://img.shields.io/github/stars/airbytehq/airbyte?style=social&color=white)](https://github.com/airbytehq/airbyte/stargazers)
 - **Category**: Managed & Self-Hosted ELT Platform (Elastic License 2.0 / MIT connectors)
@@ -216,7 +216,7 @@ Contributions are warmly welcomed! Help make this curated repository the most ac
 2. 🌿 **Create a new branch**: `git checkout -b feature/add-new-connector`.
 3. 📝 **Add your entry** under the appropriate section with:
    - Platform / Repository Name with official link
-   - GitHub stars badge (for open-source tools: `style=social&color=white`)
+   - GitHub_Stars_Badge (for open-source tools: `style=social&color=white`)
    - Company scale / license
    - Factual pricing tier or free tier limits
    - 1–2 sentence description & key trade-offs
